@@ -1,0 +1,56 @@
+#hamburger--icon {
+  //background-color: paleturquoise;
+  position: relative;
+  width: 60px;
+  height: 45px;
+  //margin: 50px auto;
+  cursor: pointer;
+  z-index: 1;
+  transform: rotate(0deg);
+  transition: .5s ease-in-out;
+  
+  span {
+    background-color: coral;
+    display: block;
+    position: absolute;
+    left: 0;
+    height: 9px;
+    width: 100%;
+    border-radius: 9px;
+    opacity: 1;
+    transform: rotate(0deg);
+    transition: .25s ease-in-out;    
+  }
+}
+
+#hamburger--icon span:nth-child(1) {
+  top: 0;
+}
+
+#hamburger--icon span:nth-child(2), #hamburger--icon span:nth-child(3) {
+  top: 18px;
+}
+
+#hamburger--icon span:nth-child(4) {
+  top: 36px;
+}
+
+#hamburger--icon.open span:nth-child(1) { //open class added via jQuery
+  top: 18px;
+  width: 0%;
+  left: 50%;
+}
+
+#hamburger--icon.open span:nth-child(2) {
+  transform: rotate(45deg);
+}
+
+#hamburger--icon.open span:nth-child(3) {
+  transform: rotate(-45deg);
+}
+
+#hamburger--icon.open span:nth-child(4) {
+  top: 18px;
+  width: 0%;
+  left: 50%;
+}

@@ -1,0 +1,91 @@
+<!doctype html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>List API</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="css/screen.css" type="text/css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+        <script type="text/javascript" src="scripts/main.js"></script>
+    </head>
+
+     
+    <body>
+        
+        <div class="site--container">
+            
+            <div class="main--wrapper">
+                
+                <header class="header--api--wrapper">
+                    <h1>This is the header</h1>
+                </header> <!-- header--api--wrapper class -->
+                
+                <div class="content--wrapper">
+                    <h2>Heading for page content area</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut ad nesciunt magnam repellendus consequatur nostrum blanditiis ex tenetur error vel perferendis dignissimos harum animi officia vero placeat tempore sint maxime!</p>
+                    <p>Maxime nesciunt corporis aperiam sed sunt molestiae ipsa odio vitae suscipit inventore recusandae quos temporibus ullam ea qui magni possimus nulla sequi rerum rem quod. Voluptates nisi quam placeat dicta!</p>
+                    <p>Tenetur ducimus quasi perspiciatis esse doloremque atque maxime incidunt recusandae nam rem nesciunt corrupti doloribus. Explicabo debitis est sed quo quae voluptates accusantium vel blanditiis numquam sunt laudantium a repellat!</p>
+                    <p>Accusantium at nobis nihil quae doloribus ex sint inventore praesentium asperiores maxime modi quo magni fuga. Dolorum cupiditate asperiores id sint earum quasi saepe culpa impedit sunt repudiandae harum magnam.</p>
+                </div> <!-- content--wrapper div class -->
+                
+            </div> <!-- main--wrapper div class -->
+            
+            <div class="sidebar--menu">
+                <nav class="main--navigation">
+                    <ul>
+                        <li><a href="">search</a></li>
+                        <li><a href="">events</a></li>
+                        <li><a href="">places</a></li>
+                        <li><a href="">documentation</a></li>
+                        <li><a href="">pricing</a></li>
+                        <li><a href="">your account</a></li>
+                    </ul>
+                </nav>
+            </div> <!-- sidebar--menu div class -->
+            
+            <div id="hamburger--icon">
+                <span> </span>
+                <span> </span>
+                <span> </span>
+                <span> </span>
+            </div> <!-- hamburger--icon div id -->
+            
+        </div> <!-- site--container div class -->
+
+
+
+        
+<script>
+    var container = document.querySelector('.site--container');
+    var main = document.querySelector('.main--wrapper');
+    
+    function toggleSidebar(){
+        isShowingSidebar() ? hideSidebar() : showSidebar();
+    }
+    
+    function showSidebar(){
+        container.classList.add('show-sidebar');
+    }
+    
+    function hideSidebar(){
+        container.classList.remove('show-sidebar');
+    }
+    
+    function isShowingSidebar(){
+        return container.classList.contains('show-sidebar');
+    }
+    
+    document.getElementById('hamburger--icon').addEventListener('click', toggleSidebar, false);
+    
+    container.addEventListener('click', function(e){
+        if(isShowingSidebar() && main.contains(e.target)){
+            e.preventDefault();
+            hideSidebar();
+        }
+    }, true);
+</script>        
+        
+    </body>
+
+</html>
