@@ -1,9 +1,11 @@
 #hamburger--icon {
   //background-color: paleturquoise;
-  position: relative;
+  //position: fixed;
+  //display: block;
+  float: left;
   width: 60px;
   height: 45px;
-  //margin: 50px auto;
+  margin: 40px;
   cursor: pointer;
   z-index: 1;
   transform: rotate(0deg);
