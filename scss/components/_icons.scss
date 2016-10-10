@@ -1,24 +1,25 @@
 #hamburger--icon {
   //background-color: paleturquoise;
-  //position: fixed;
+  position: fixed;
   //display: block;
   float: left;
-  width: 60px;
-  height: 45px;
-  margin: 40px;
+  width: 46px;
+  height: 46px;
+  //margin: 30px 0 30px 4.1667%;
+  margin: 32px 30px;
   cursor: pointer;
   z-index: 1;
   transform: rotate(0deg);
-  transition: .5s ease-in-out;
+  transition: .4s ease-in-out;
   
   span {
-    background-color: coral;
+    background-color: whitesmoke;
     display: block;
     position: absolute;
     left: 0;
-    height: 9px;
+    height: 6px;
     width: 100%;
-    border-radius: 9px;
+    border-radius: 6px;
     opacity: 1;
     transform: rotate(0deg);
     transition: .25s ease-in-out;    
@@ -30,15 +31,15 @@
 }
 
 #hamburger--icon span:nth-child(2), #hamburger--icon span:nth-child(3) {
-  top: 18px;
+  top: 14px;
 }
 
 #hamburger--icon span:nth-child(4) {
-  top: 36px;
+  top: 28px;
 }
 
 #hamburger--icon.open span:nth-child(1) { //open class added via jQuery
-  top: 18px;
+  top: 14px;
   width: 0%;
   left: 50%;
 }
@@ -52,7 +53,34 @@
 }
 
 #hamburger--icon.open span:nth-child(4) {
-  top: 18px;
+  top: 14px;
   width: 0%;
   left: 50%;
+}
+
+#hamburger--icon:hover > span {
+  background-color: $highlight-color;
+}
+
+
+
+
+//Media queries - Mobile Layout: 320px
+@media only screen and (max-width: 767px) {
+  #hamburger--icon {
+    width: 36px;
+    margin: 25px 15px;
+    
+    span {
+      //height: 4px;
+    }
+  }
+  
+  #hamburger--icon span:nth-child(2), #hamburger--icon span:nth-child(3) {
+    top: 12px;
+  }
+  
+  #hamburger--icon span:nth-child(4) {
+    top: 24px;
+  }
 }

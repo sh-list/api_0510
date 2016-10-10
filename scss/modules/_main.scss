@@ -1,86 +1,102 @@
 html {
-  font-size: responsive;
+  //font-size: responsive 12px 18px;
+  //font-range: 320px 1220px;
 }
 
 body {
-  //background-color: aliceblue;
+  background-color: aliceblue;
   color: darkslategray;
   font-family: 'montserratlight', 'helvetica', sans-serif;
 }
 
+h1 {
+  @include h1-style();
+}
+
+h2 {
+  @include h2-style();
+}
+
+p {
+  margin: 14px 0 10px 0;
+  font-size: responsive 14px 18px;
+  line-height: 1.4em;
+}
+
+
+
+
 .site--container {
   @include container(100%);
-  background-color: peachpuff;
+  //background-color: peachpuff;
   position: relative;
   overflow-x: hidden;
   width: 100%;
   height: 100%;
   
   .main--wrapper {
-    //@include span(22 of 24);
+    //@include span(18 of 24);
     //@include last;
-    background-color: lavender;
+    //background-color: lavender;
     position: relative;
+    float: right;
+    width: 75.75%;
     height: 100%;
-    //padding-right: 8.5%;
     transition-property: transform;
     transition-duration: 0.3s;
     transition-timing-function: ease-in-out;
-    
-    .header--api--wrapper {
-      background-color: lightseagreen;
-      width: 80%;
-      height: 100px;
-      
-      h1 {
-        position: relative;
-        top: 50%;
-        transform: translateY(-50%);        
-      }
-    }
     
     .content--wrapper {
-      background-color: palegoldenrod;
-      height: 500px;
+      //background-color: palegoldenrod;
+      height: 100%;
+      //padding: 30px 4.1667% 0 4.1667%;
+      padding: 30px 30px 0 30px;
     }
-  }
-  
-  .sidebar--menu {
-    //@include span(6 of 24);
-    background-color: mistyrose;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 24.25%;
-    height: 100%;
-    padding-top: 100px;
-    text-align: center;
-    transform: translate3d(-100%,0,0);
-    transition-property: transform;
-    transition-duration: 0.3s;
-    transition-timing-function: ease-in-out;
   }  
 }
 
-.show-sidebar .main--wrapper {
-  transform: translate3d(24.25%, 0, 0);
+
+
+
+//Media queries - Tablet Layout: 768px
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+  @include layout($medium-screen);
+  
+  .site--container {
+    @include container();
+    
+    .main--wrapper {
+      //@include span(20 at 5 of 24);
+      width: 100%;
+    }
+  }
 }
-
-.show-sidebar .sidebar--menu {
-  transform: translate3d(0, 0, 0);
-}
-
-.show-sidebar #hamburger--icon {
-  //background-color: indianred;
-} 
-
 
 
 
 
 //Media queries - Mobile Layout: 320px
 @media only screen and (max-width: 767px) {
-  body {
-    background-color: lemonchiffon;
+  @include layout($small-screen);
+  
+  html {
+     -webkit-text-size-adjust: none;
+  }
+  
+  h2 {
+    @include h2-style-small();
+  }
+   
+  .site--container {
+    @include container();
+    
+    .main--wrapper {
+      //@include span(16 at 9 of 24);
+      width: 100%;
+      
+      .content--wrapper {
+        padding: 30px 15px 0 15px;
+      }
+    }
   }
 }
