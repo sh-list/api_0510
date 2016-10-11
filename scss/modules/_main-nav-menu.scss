@@ -60,7 +60,7 @@
     
     ul {
       //background-color: salmon;
-      background-color: $primary-color;
+      background-color: rgba($primary-color, 1);
       position: absolute;
       width: 100%;
       left: 0;

@@ -1,0 +1,52 @@
+#dynamic__menu {
+  
+  li {
+    border-bottom: 0;
+  }
+}
+
+#dynamic__menu > a {
+  //background-color: lightseagreen;
+  position: relative;
+}
+
+.submenu__title {
+  //background-color: pink;
+}
+
+.submenu__title > a {
+  //background-color: salmon; 
+}
+
+.submenu__title > a:after {
+  //background-color: tomato;
+  color: whitesmoke;
+  content: '+';
+  position: absolute;
+  top: 50%;
+  right: 30px;
+  transform: translateY(-50%);
+}
+
+.submenu__title > a:hover:after {
+  color: $highlight-color;
+}
+
+.submenu__title__expand a:after {
+  content: '-';
+}
+
+#dynamic__menu #menu--accordion {
+  background-color: rgba($primary-color, 0.4);
+  max-height: 0px;
+  overflow: hidden;
+  font-size: 14px;
+  text-indent: 20px;
+  transition: max-height .4s ease-in-out;
+}
+
+.submenu--title--expand {
+  background-color: plum;
+  max-height: 1000px;
+  overflow: visible;
+}
