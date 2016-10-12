@@ -22,12 +22,12 @@
                         <li><a href="search.html" class="api__search"> /search</a></li>
                         <li><a href="events.html" class="api__search"> /events</a></li>
                         <li><a href="places.html" class="api__search"> /places</a></li>
-                        <li id="dynamic__menu" class="submenu__title"><a href="documentation.html" onclick="openSub()">documentation</a>
-                            <ul id="menu--accordion" class="submenu__title">
-                                <li><a href="documentation.html#categories">categories</a></li>
-                                <li><a href="documentation.html#events">events</a></li>
-                                <li><a href="documentation.html#places">places</a></li>
-                                <li><a href="documentation.html#search">search</a></li>
+                        <li id="dynamic--menu"><a href="documentation.html" class="selected">documentation</a>
+                            <ul class="menu--accordion">
+                                <li><a href="documentation.html#categories">» categories</a></li>
+                                <li><a href="documentation.html#events">» events</a></li>
+                                <li><a href="documentation.html#places">» places</a></li>
+                                <li><a href="documentation.html#search">» search</a></li>
                             </ul>
                         </li>
                         <li><a href="pricing.html">pricing</a></li>
@@ -85,7 +85,14 @@
                         <li><a href="search.html" class="api__search"> /search</a></li>
                         <li><a href="events.html" class="api__search"> /events</a></li>
                         <li><a href="places.html" class="api__search"> /places</a></li>
-                        <li><a href="documentation.html">documentation</a></li>
+                        <li id="dynamic--menu--small"><a href="documentation.html" class="selected">documentation</a>
+                            <ul class="menu--accordion">
+                                <li><a href="documentation.html#categories">» categories</a></li>
+                                <li><a href="documentation.html#events">» events</a></li>
+                                <li><a href="documentation.html#places">» places</a></li>
+                                <li><a href="documentation.html#search">» search</a></li>
+                            </ul>
+                        </li>
                         <li><a href="pricing.html">pricing</a></li>
                         <li><a href="account.html">your account</a></li>
                     </ul>
@@ -101,8 +108,17 @@
             </div> <!-- sidebar--menu div class -->
                         
         </div> <!-- site--container div class -->
+        
 
-
+<script>
+    var x = document.getElementById("dynamic--menu");
+    //var y = document.getElementsByClassName("menu--accordion");
+    x.addEventListener("click", function(e){
+        //x.setAttribute("style", "background-color: goldenrod");
+        x.classList.toggle("expand");
+        e.preventDefault();
+    });
+</script>        
 
         
 <script>
@@ -133,40 +149,6 @@
             hideSidebar();
         }
     }, true);
-</script>
-
-<!--
-<script>
-    function openSub() {
-        document.getElementById("dynamic__menu").setAttribute('style','background-color:firebrick; overflow: visible');
-    }
-</script>
--->
-
-<!--
-<script>
-var acc = document.getElementsByClassName("submenu__title");
-var i;
-
-for (i = 0; i < acc.length; i++) {
-    acc[i].onclick = function(){
-        this.classList.toggle("submenu--title--expand");
-        //this.nextElementSibling.classList.toggle("show");
-  };
-}
-</script>-->
-
-
-<script>
-    var x = document.getElementById("dynamic__menu");
-    var y = document.getElementById("menu--accordion");
-        x.addEventListener("click", function(){
-            if (y.className === "submenu__title") {
-                y.className += " submenu--title--expand";
-            } else {
-                y.className = "submenu__title";
-            }
-        });
 </script>
 
 

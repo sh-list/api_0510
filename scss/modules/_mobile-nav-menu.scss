@@ -51,6 +51,20 @@
           background-color: whitesmoke;
         }        
       }
+      
+      .selected {
+        //background-color: rgba(aliceblue, 0.2);
+        color: $highlight-color;
+      }
+      
+      .selected.api__search:before {
+        //background-color: whitesmoke;
+        color: whitesmoke
+      }
+      
+      .selected.api__search:hover:before {
+        color: $highlight-color;
+      }
     }
   }
   
@@ -79,6 +93,7 @@
           color: whitesmoke;
           display: inline-block;
           padding: 3px 30px;
+          opacity: 0.6;
           
           &:hover {
             color: $highlight-color;

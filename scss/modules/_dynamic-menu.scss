@@ -1,26 +1,29 @@
-#dynamic__menu {
+#dynamic--menu--small {
+  //background-color: salmon;
   
   li {
+    background-color: rgba($primary-color, 0.4);
     border-bottom: 0;
-  }
+    //line-height: 1.8em;
+     
+    a {
+      padding: 10px 30px;
+      font-size: 14px;
+      opacity: 0.6;
+      
+      &:hover {
+        background-color: transparent;
+        opacity: 1;
+      }
+    }    
+  }  
 }
 
-#dynamic__menu > a {
-  //background-color: lightseagreen;
+#dynamic--menu--small > a {
   position: relative;
 }
 
-.submenu__title {
-  //background-color: pink;
-}
-
-.submenu__title > a {
-  //background-color: salmon; 
-}
-
-.submenu__title > a:after {
-  //background-color: tomato;
-  color: whitesmoke;
+#dynamic--menu--small > a:after {
   content: '+';
   position: absolute;
   top: 50%;
@@ -28,25 +31,89 @@
   transform: translateY(-50%);
 }
 
-.submenu__title > a:hover:after {
-  color: $highlight-color;
+#dynamic--menu--small.expand {
+  //background-color: rosybrown;
+  
+  .menu--accordion {
+    max-height: 200px;
+  }  
 }
 
-.submenu__title__expand a:after {
+#dynamic--menu--small.expand > a:after {
   content: '-';
 }
 
-#dynamic__menu #menu--accordion {
-  background-color: rgba($primary-color, 0.4);
-  max-height: 0px;
+.menu--accordion {
+  //background-color: palegoldenrod;
+  max-height: 0;
   overflow: hidden;
-  font-size: 14px;
-  text-indent: 20px;
-  transition: max-height .4s ease-in-out;
+  transition: max-height .6s ease-in-out;
 }
 
-.submenu--title--expand {
-  background-color: plum;
-  max-height: 1000px;
-  overflow: visible;
+
+
+
+//Media queries - Mobile Layout: 320px
+@media only screen and (max-width: 767px) {
+  #dynamic--menu--small > a:after {
+    right: 15px;
+  }
+}
+
+
+
+
+//Media queries - Desktop Layout: 1220px
+@media only screen and (min-width: 1220px) {
+  #dynamic--menu {
+    //background-color: salmon;
+    
+    li {
+      background-color: rgba($primary-color, 0.4);
+      border-bottom: 0;
+      //line-height: 1.8em;
+       
+      a {
+        padding: 10px 30px;
+        font-size: 14px;
+        opacity: 0.6;
+        
+        &:hover {
+          background-color: transparent;
+          opacity: 1;
+        }
+      }    
+    }  
+  }
+  
+  #dynamic--menu > a {
+    position: relative;
+  }
+  
+  #dynamic--menu > a:after {
+    content: '+';
+    position: absolute;
+    top: 50%;
+    right: 30px;
+    transform: translateY(-50%);
+  }
+  
+  #dynamic--menu.expand {
+    //background-color: rosybrown;
+    
+    .menu--accordion {
+      max-height: 200px;
+    }  
+  }
+  
+  #dynamic--menu.expand > a:after {
+    content: '-';
+  }
+  
+  .menu--accordion {
+    //background-color: palegoldenrod;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height .6s ease-in-out;
+  }
 }

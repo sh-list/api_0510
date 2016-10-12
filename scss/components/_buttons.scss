@@ -165,6 +165,10 @@
     @include button-action-small();
   }
   
+  .get__docs__button {
+    @include button-action-small();
+  }
+  
   .copy__button {
     right: 65px;
     width: 65px;
